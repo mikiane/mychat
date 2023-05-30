@@ -1,0 +1,2 @@
+# Identifier les PID des processus gunicorn sur le port 8000
+lsof -i :8000

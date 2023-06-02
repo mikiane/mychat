@@ -53,4 +53,5 @@ def generate_chat(consigne, texte, system, model="gpt-4"):
         # If the part contains a 'delta' and the 'delta' contains 'content'
         if 'delta' in chunk['choices'][0] and 'content' in chunk['choices'][0]['delta']:
             content = chunk['choices'][0]['delta']['content']  # Extract the content
+            print(content)
             yield f"{content}"  # Yield the content as a string

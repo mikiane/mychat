@@ -57,6 +57,8 @@ def chat():
     texte = data.get('texte')
     system = data.get('system')
     model = data.get('model', 'gpt-4')  # Default to 'gpt-4' if no model is provided
+    
+    print("consigne: " + consigne + "\n" + "texte: " + texte + "\n" + "system: " + system + "\n" + "model: " + model + "\n")
 
     # Import module to unescape URL-encoded strings
     from urllib.parse import unquote

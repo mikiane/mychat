@@ -23,7 +23,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Enable CORS for the Flask app for all routes and a specific origin
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Define a route for streaming chat, accepting POST requests
 @app.route('/stream_chat', methods=['POST'])

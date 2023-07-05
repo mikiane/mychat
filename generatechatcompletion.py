@@ -39,6 +39,13 @@ def generate_chat_completion(consigne, texte, model="gpt-4"):
 def generate_chat(consigne, texte, system, model="gpt-4"):
     prompt = str(consigne + " : " + texte)  # Construct the prompt from the given consigne and texte
     # Call the OpenAI API to create a chat
+    
+    prompt = prompt[-10000:]
+    if model == "gpt-4":
+        prompt = prompt[-10000:]
+    if model == "gpt-3.5-turbo-16k":
+        prompt = prompt[-40000:]
+    
     response = openai.ChatCompletion.create(
         model=model,
         messages=[
